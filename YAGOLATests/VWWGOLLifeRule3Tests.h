@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface YAGOLATests : SenTestCase
+@interface VWWGOLLifeRule3Tests : SenTestCase
 
 @end

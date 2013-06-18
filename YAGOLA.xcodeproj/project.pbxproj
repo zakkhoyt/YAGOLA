@@ -17,12 +17,19 @@
 		C6CBF700177028F100984C74 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF6FF177028F100984C74 /* Default@2x.png */; };
 		C6CBF702177028F100984C74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF701177028F100984C74 /* Default-568h@2x.png */; };
 		C6CBF705177028F100984C74 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF703177028F100984C74 /* MainStoryboard.storyboard */; };
-		C6CBF708177028F100984C74 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF707177028F100984C74 /* VWWViewController.m */; };
 		C6CBF710177028F100984C74 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBF70F177028F100984C74 /* SenTestingKit.framework */; };
 		C6CBF711177028F100984C74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBF6EB177028F100984C74 /* UIKit.framework */; };
 		C6CBF712177028F100984C74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBF6ED177028F100984C74 /* Foundation.framework */; };
 		C6CBF71A177028F100984C74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF718177028F100984C74 /* InfoPlist.strings */; };
-		C6CBF71D177028F100984C74 /* YAGOLATests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF71C177028F100984C74 /* YAGOLATests.m */; };
+		C6CBF7301770294B00984C74 /* VWWCGLifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7281770294B00984C74 /* VWWCGLifeView.m */; };
+		C6CBF7311770294B00984C74 /* VWWCGLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF72A1770294B00984C74 /* VWWCGLifeViewController.m */; };
+		C6CBF7321770294B00984C74 /* VWWGOLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF72D1770294B00984C74 /* VWWGOLCell.m */; };
+		C6CBF7331770294B00984C74 /* VWWGOLLife.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF72F1770294B00984C74 /* VWWGOLLife.m */; };
+		C6CBF7391770296D00984C74 /* VWWGOLLifeRule1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7341770296D00984C74 /* VWWGOLLifeRule1Tests.m */; };
+		C6CBF73A1770296D00984C74 /* VWWGOLLIfeRule2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7351770296D00984C74 /* VWWGOLLIfeRule2Tests.m */; };
+		C6CBF73B1770296D00984C74 /* VWWGOLLifeRule3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7361770296D00984C74 /* VWWGOLLifeRule3Tests.m */; };
+		C6CBF73C1770296D00984C74 /* VWWGOLLifeRule4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7371770296D00984C74 /* VWWGOLLifeRule4Tests.m */; };
+		C6CBF73D1770296D00984C74 /* VWWGOLLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +57,28 @@
 		C6CBF6FF177028F100984C74 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C6CBF701177028F100984C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C6CBF704177028F100984C74 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C6CBF706177028F100984C74 /* VWWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
-		C6CBF707177028F100984C74 /* VWWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C6CBF70E177028F100984C74 /* YAGOLATests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YAGOLATests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CBF70F177028F100984C74 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C6CBF717177028F100984C74 /* YAGOLATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YAGOLATests-Info.plist"; sourceTree = "<group>"; };
 		C6CBF719177028F100984C74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C6CBF71B177028F100984C74 /* YAGOLATests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YAGOLATests.h; sourceTree = "<group>"; };
-		C6CBF71C177028F100984C74 /* YAGOLATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YAGOLATests.m; sourceTree = "<group>"; };
+		C6CBF7271770294B00984C74 /* VWWCGLifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCGLifeView.h; sourceTree = "<group>"; };
+		C6CBF7281770294B00984C74 /* VWWCGLifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCGLifeView.m; sourceTree = "<group>"; };
+		C6CBF7291770294B00984C74 /* VWWCGLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCGLifeViewController.h; sourceTree = "<group>"; };
+		C6CBF72A1770294B00984C74 /* VWWCGLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCGLifeViewController.m; sourceTree = "<group>"; };
+		C6CBF72C1770294B00984C74 /* VWWGOLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLCell.h; sourceTree = "<group>"; };
+		C6CBF72D1770294B00984C74 /* VWWGOLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLCell.m; sourceTree = "<group>"; };
+		C6CBF72E1770294B00984C74 /* VWWGOLLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLife.h; sourceTree = "<group>"; };
+		C6CBF72F1770294B00984C74 /* VWWGOLLife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLife.m; sourceTree = "<group>"; };
+		C6CBF7341770296D00984C74 /* VWWGOLLifeRule1Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule1Tests.m; sourceTree = "<group>"; };
+		C6CBF7351770296D00984C74 /* VWWGOLLIfeRule2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLIfeRule2Tests.m; sourceTree = "<group>"; };
+		C6CBF7361770296D00984C74 /* VWWGOLLifeRule3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule3Tests.m; sourceTree = "<group>"; };
+		C6CBF7371770296D00984C74 /* VWWGOLLifeRule4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule4Tests.m; sourceTree = "<group>"; };
+		C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeTests.m; sourceTree = "<group>"; };
+		C6CBF73E177029C800984C74 /* VWWGOLLifeRule1Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule1Tests.h; sourceTree = "<group>"; };
+		C6CBF73F177029C800984C74 /* VWWGOLLifeRule2Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule2Tests.h; sourceTree = "<group>"; };
+		C6CBF740177029C800984C74 /* VWWGOLLifeRule3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule3Tests.h; sourceTree = "<group>"; };
+		C6CBF741177029C800984C74 /* VWWGOLLifeRule4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule4Tests.h; sourceTree = "<group>"; };
+		C6CBF742177029C800984C74 /* VWWGOLLifeTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeTests.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +138,11 @@
 		C6CBF6F1177028F100984C74 /* YAGOLA */ = {
 			isa = PBXGroup;
 			children = (
+				C6CBF7261770294B00984C74 /* Controllers */,
+				C6CBF72B1770294B00984C74 /* GOL */,
 				C6CBF6FA177028F100984C74 /* VWWAppDelegate.h */,
 				C6CBF6FB177028F100984C74 /* VWWAppDelegate.m */,
 				C6CBF703177028F100984C74 /* MainStoryboard.storyboard */,
-				C6CBF706177028F100984C74 /* VWWViewController.h */,
-				C6CBF707177028F100984C74 /* VWWViewController.m */,
 				C6CBF6F2177028F100984C74 /* Supporting Files */,
 			);
 			path = YAGOLA;
@@ -144,8 +165,16 @@
 		C6CBF715177028F100984C74 /* YAGOLATests */ = {
 			isa = PBXGroup;
 			children = (
-				C6CBF71B177028F100984C74 /* YAGOLATests.h */,
-				C6CBF71C177028F100984C74 /* YAGOLATests.m */,
+				C6CBF742177029C800984C74 /* VWWGOLLifeTests.h */,
+				C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */,
+				C6CBF73E177029C800984C74 /* VWWGOLLifeRule1Tests.h */,
+				C6CBF7341770296D00984C74 /* VWWGOLLifeRule1Tests.m */,
+				C6CBF73F177029C800984C74 /* VWWGOLLifeRule2Tests.h */,
+				C6CBF7351770296D00984C74 /* VWWGOLLIfeRule2Tests.m */,
+				C6CBF740177029C800984C74 /* VWWGOLLifeRule3Tests.h */,
+				C6CBF7361770296D00984C74 /* VWWGOLLifeRule3Tests.m */,
+				C6CBF741177029C800984C74 /* VWWGOLLifeRule4Tests.h */,
+				C6CBF7371770296D00984C74 /* VWWGOLLifeRule4Tests.m */,
 				C6CBF716177028F100984C74 /* Supporting Files */,
 			);
 			path = YAGOLATests;
@@ -158,6 +187,28 @@
 				C6CBF718177028F100984C74 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6CBF7261770294B00984C74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBF7271770294B00984C74 /* VWWCGLifeView.h */,
+				C6CBF7281770294B00984C74 /* VWWCGLifeView.m */,
+				C6CBF7291770294B00984C74 /* VWWCGLifeViewController.h */,
+				C6CBF72A1770294B00984C74 /* VWWCGLifeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C6CBF72B1770294B00984C74 /* GOL */ = {
+			isa = PBXGroup;
+			children = (
+				C6CBF72C1770294B00984C74 /* VWWGOLCell.h */,
+				C6CBF72D1770294B00984C74 /* VWWGOLCell.m */,
+				C6CBF72E1770294B00984C74 /* VWWGOLLife.h */,
+				C6CBF72F1770294B00984C74 /* VWWGOLLife.m */,
+			);
+			path = GOL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +324,10 @@
 			files = (
 				C6CBF6F8177028F100984C74 /* main.m in Sources */,
 				C6CBF6FC177028F100984C74 /* VWWAppDelegate.m in Sources */,
-				C6CBF708177028F100984C74 /* VWWViewController.m in Sources */,
+				C6CBF7301770294B00984C74 /* VWWCGLifeView.m in Sources */,
+				C6CBF7311770294B00984C74 /* VWWCGLifeViewController.m in Sources */,
+				C6CBF7321770294B00984C74 /* VWWGOLCell.m in Sources */,
+				C6CBF7331770294B00984C74 /* VWWGOLLife.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CBF71D177028F100984C74 /* YAGOLATests.m in Sources */,
+				C6CBF7391770296D00984C74 /* VWWGOLLifeRule1Tests.m in Sources */,
+				C6CBF73A1770296D00984C74 /* VWWGOLLIfeRule2Tests.m in Sources */,
+				C6CBF73B1770296D00984C74 /* VWWGOLLifeRule3Tests.m in Sources */,
+				C6CBF73C1770296D00984C74 /* VWWGOLLifeRule4Tests.m in Sources */,
+				C6CBF73D1770296D00984C74 /* VWWGOLLifeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
