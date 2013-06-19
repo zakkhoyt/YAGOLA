@@ -15,6 +15,8 @@
 @end
 
 
+static NSString *kSegueMainToSettings = @"segueMainToSettings";
+
 //#define WIDTH 20
 //#define HEIGHT 20
 static NSInteger kGOLWidth = 64;
@@ -29,7 +31,7 @@ static NSInteger kGOLHeight = 92;
 
 static float kInitialFrequency = 0.1;
 
-@interface VWWCGLifeViewController ()<VWWGOLLifeDelegate>
+@interface VWWCGLifeViewController ()<VWWGOLLifeDelegate, VWWCGLifeViewDelegate>
 @property (nonatomic, strong) VWWGOLLife *life;
 @property (strong, nonatomic) IBOutlet VWWCGLifeView *cgLifeView;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
@@ -52,11 +54,12 @@ static float kInitialFrequency = 0.1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.cgLifeView.delegate = self;
     self.life = [[VWWGOLLife alloc]initWithWidth:kGOLWidth height:kGOLHeight];
     self.life.delegate = self;
     self.generateFrequency = kInitialFrequency;
     self.frequencySlider.value = self.generateFrequency;
-    
+    self.startButton.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,18 +73,20 @@ static float kInitialFrequency = 0.1;
 - (IBAction)startButtonTouchUpInside:(id)sender {
     if(self.life.running == NO){
         [self.life start];
-        [self.startButton  setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.startButton  setTitle:@"Pause" forState:UIControlStateNormal];
+//        self.generateButton.hidden = YES;
     }
     else{
         [self.life stop];
         [self.startButton  setTitle:@"Evolve!" forState:UIControlStateNormal];
+//        self.generateButton.hidden = NO;
     }
     
 }
 
 
 - (IBAction)generateButtonTouchUpInside:(id)sender {
-    [self.life killAllCells];
+//    [self.life killAllCells];
     
     NSInteger t = self.life.width * self.life.height;
     NSInteger requiredCellCount = t * self.generateFrequency;
@@ -97,7 +102,7 @@ static float kInitialFrequency = 0.1;
     }
     
     [self renderCells];
-    
+    self.startButton.hidden = NO;
     NSLog(@"added %d cells. Actual count:%d", requiredCellCount, self.life.cells.count);
 }
 
@@ -110,17 +115,36 @@ static float kInitialFrequency = 0.1;
     [self.life processTimer];
 }
 
+
+- (IBAction)clearButtonTouchUnInside:(id)sender {
+    [self.life killAllCells];
+    [self renderCells];
+}
+
+
+
 #pragma mark Implements VWWGOLLifeDelegate
 -(void)renderCells{
     
     self.cgLifeView.life = self.life;
     [self.cgLifeView setNeedsDisplay];
-    
-    if(self.life.cells.count == 0){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"DEAD!" message:@"All cells died. Lame." delegate:nil cancelButtonTitle:@"alright" otherButtonTitles:nil, nil];
-        [alert show];
-        [self startButtonTouchUpInside:nil];
-    }
+
+//    if(self.life.cells.count == 0){
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"DEAD!" message:@"All cells died. Lame." delegate:nil cancelButtonTitle:@"alright" otherButtonTitles:nil, nil];
+//        [alert show];
+//        [self startButtonTouchUpInside:nil];
+//        self.startButton.hidden = YES;
+//    }
 }
+
+
+#pragma mark Implements VWWCGLifeViewDelegate
+-(void)cgLifeView:(VWWCGLifeView*)sender userTouchedAtX:(NSInteger)x andY:(NSInteger)y{
+    VWWGOLCell *cell = [[VWWGOLCell alloc]initWithPositionX:x andY:y alive:YES];
+    [self.life addCell:cell];
+    [self renderCells];
+}
+
+
 
 @end

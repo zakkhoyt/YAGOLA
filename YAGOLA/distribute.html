@@ -1,0 +1,84 @@
+<html>
+    <div style="color:#0000FF">
+        <h3>How to generate an Enterprise Distribution in XCode</h3>
+        <ol>
+            <li>Go to Archives->distribute->Adhoc using the following information</li>
+            <li>https://s3.amazonaws.com/threefoldphotos/Smile.ipa</li>
+            <li>Smile</li>
+        </ol>
+        
+        <h3>How to host the iOS app for Enterprise Distribution</h3>
+        <ol>
+            <li>Navigate to <a href="https://threefoldphotos.signin.aws.amazon.com/console">amazon's server</a></li>
+            <li>Username: zakk@threefoldphotos.com</li>
+            <li>Password: 0PhwK0XStk*k</li>
+            <li>Click on S3 under Storage and Content Delivery</li>
+            <li>Click on iosbuilds in the buckets list</li>
+            <li>Click on Upload</li>
+            <li>Click on Add Files</li>
+            <li>Select the ipa and plist files that you generated above</li>
+            <li>Click on set details</li>
+            <li>Click on Set Permissions</li>
+            <li>Click on Add More Permissions</li>
+            <li>Select EVERYONE from the drop menu, and check Open/Download View Permissions</li>
+            <li>Click on Start Upload</li>
+        </ol>
+        
+        <h3>How to generate an email to allow users to install the app.</h3>
+        <ol>
+            <li>Create a new entry in the HTML code below using the format: <a href="https://s3-us-west-2.amazonaws.com/iosbuilds/YAGOLA.ipa">The source to this link</a></li>
+            <li>Open this page in a web browser and copy the link to an email and send.</li>
+        </ol>
+        
+        
+        <h3>UDID</h3>
+        If you cannot install this on your iOS device, it is likely because your device is not included in the code signature. If you want it included, I'll need your 40 digit UDID.
+        You can find this number by attaching your device to iTunes and then clicking on "serial number". The field will toggle to UDID. Then type the 40 digits and email it to me (currently you cannot copy/paste it).
+    </div>
+    <hr></hr>
+    
+
+    
+    
+    <div style="color:#FF0000">
+        <h2>YAGOLA</h2>
+        <hr></hr>
+    
+        Install the new app. Open this email from iOS's mail app, then tap on <a href="itms-services://?action=download-manifest&url=https://s3-us-west-2.amazonaws.com/iosbuilds/YAGOLA.plist">this link to install an ad-hoc build of YAGOLA</a>
+<!--
+ 
+         <div>
+         Version: <br>
+         What's new in this build:
+         <ul>
+         <li></li>
+         </ul>
+         Known issues in this build:
+         <ul>
+         <li></li>
+         </ul>
+         About the app in general:
+         <ul>
+         <li>This app is titled "Heartstream", which may change.</li>
+         <li>You must have iOS 6.0 or greater to run this app</li>
+         <li>You must have iOS 6.0 or greater to run this app</li>
+         <li>You must run on iPhone. iPad is not supported yet.</li>
+         </ul>
+ 
+         How to install:
+         <ol>
+         <li>REMOVE THE CURRENT BUILD. Press the iOS device's button to minimize the currently running app. Perform a long press on Smile v2.0, then tap the "x". Press the hardware button again to exit edit mode. Failure to remove the old app leads to undefined behavior.</li>
+         <li>Install the new app. Open this email from iOS's mail app, then tap on <a href="itms-services://?action=download-manifest&url=https://s3-us-west-2.amazonaws.com/iosbuilds/YAGOLA.plist">this link to install an ad-hoc build of Heartstream</a></li>
+         </ol>
+         
+         If the installer fails, it is likely that your iOS device is not listed in the Threefold Photos iOS provisioning profile. If you would like to run test builds on your device, email me your 40 digit UDID. A quick search on Google will show you how to find it using iTunes or XCode.
+         Once I have received your 40 digit UDID, I will include it in the successor to the current build.<p>
+         Thanks, -Zakk
+         </div>
+         <hr></hr>
+-->
+        
+      
+</html>
+
+

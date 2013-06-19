@@ -13,9 +13,7 @@
 		C6CBF6F6177028F100984C74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF6F4177028F100984C74 /* InfoPlist.strings */; };
 		C6CBF6F8177028F100984C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF6F7177028F100984C74 /* main.m */; };
 		C6CBF6FC177028F100984C74 /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF6FB177028F100984C74 /* VWWAppDelegate.m */; };
-		C6CBF6FE177028F100984C74 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF6FD177028F100984C74 /* Default.png */; };
 		C6CBF700177028F100984C74 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF6FF177028F100984C74 /* Default@2x.png */; };
-		C6CBF702177028F100984C74 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF701177028F100984C74 /* Default-568h@2x.png */; };
 		C6CBF705177028F100984C74 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF703177028F100984C74 /* MainStoryboard.storyboard */; };
 		C6CBF710177028F100984C74 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBF70F177028F100984C74 /* SenTestingKit.framework */; };
 		C6CBF711177028F100984C74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CBF6EB177028F100984C74 /* UIKit.framework */; };
@@ -29,7 +27,10 @@
 		C6CBF73A1770296D00984C74 /* VWWGOLLIfeRule2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7351770296D00984C74 /* VWWGOLLIfeRule2Tests.m */; };
 		C6CBF73B1770296D00984C74 /* VWWGOLLifeRule3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7361770296D00984C74 /* VWWGOLLifeRule3Tests.m */; };
 		C6CBF73C1770296D00984C74 /* VWWGOLLifeRule4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7371770296D00984C74 /* VWWGOLLifeRule4Tests.m */; };
-		C6CBF73D1770296D00984C74 /* VWWGOLLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */; };
+		C6CBF7441770306200984C74 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF7431770306200984C74 /* icon_57x57.png */; };
+		C6CBF7461770306D00984C74 /* icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF7451770306D00984C74 /* icon_114x114.png */; };
+		C6E59A821771328F00B001AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF74B177030CC00984C74 /* Default-568h@2x.png */; };
+		C6EE2E1D1770F41400F33858 /* distribute.html in Resources */ = {isa = PBXBuildFile; fileRef = C6EE2E1C1770F41400F33858 /* distribute.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +74,16 @@
 		C6CBF7351770296D00984C74 /* VWWGOLLIfeRule2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLIfeRule2Tests.m; sourceTree = "<group>"; };
 		C6CBF7361770296D00984C74 /* VWWGOLLifeRule3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule3Tests.m; sourceTree = "<group>"; };
 		C6CBF7371770296D00984C74 /* VWWGOLLifeRule4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule4Tests.m; sourceTree = "<group>"; };
-		C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeTests.m; sourceTree = "<group>"; };
 		C6CBF73E177029C800984C74 /* VWWGOLLifeRule1Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule1Tests.h; sourceTree = "<group>"; };
 		C6CBF73F177029C800984C74 /* VWWGOLLifeRule2Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule2Tests.h; sourceTree = "<group>"; };
 		C6CBF740177029C800984C74 /* VWWGOLLifeRule3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule3Tests.h; sourceTree = "<group>"; };
 		C6CBF741177029C800984C74 /* VWWGOLLifeRule4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule4Tests.h; sourceTree = "<group>"; };
-		C6CBF742177029C800984C74 /* VWWGOLLifeTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeTests.h; sourceTree = "<group>"; };
+		C6CBF7431770306200984C74 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
+		C6CBF7451770306D00984C74 /* icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114x114.png; sourceTree = "<group>"; };
+		C6CBF747177030BA00984C74 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C6CBF749177030C500984C74 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C6CBF74B177030CC00984C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C6EE2E1C1770F41400F33858 /* distribute.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = distribute.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,11 @@
 		C6CBF6DF177028F100984C74 = {
 			isa = PBXGroup;
 			children = (
+				C6CBF74B177030CC00984C74 /* Default-568h@2x.png */,
+				C6CBF749177030C500984C74 /* Default@2x.png */,
+				C6CBF747177030BA00984C74 /* Default.png */,
+				C6CBF7451770306D00984C74 /* icon_114x114.png */,
+				C6CBF7431770306200984C74 /* icon_57x57.png */,
 				C6CBF6F1177028F100984C74 /* YAGOLA */,
 				C6CBF715177028F100984C74 /* YAGOLATests */,
 				C6CBF6EA177028F100984C74 /* Frameworks */,
@@ -138,6 +148,7 @@
 		C6CBF6F1177028F100984C74 /* YAGOLA */ = {
 			isa = PBXGroup;
 			children = (
+				C6EE2E1C1770F41400F33858 /* distribute.html */,
 				C6CBF7261770294B00984C74 /* Controllers */,
 				C6CBF72B1770294B00984C74 /* GOL */,
 				C6CBF6FA177028F100984C74 /* VWWAppDelegate.h */,
@@ -165,8 +176,6 @@
 		C6CBF715177028F100984C74 /* YAGOLATests */ = {
 			isa = PBXGroup;
 			children = (
-				C6CBF742177029C800984C74 /* VWWGOLLifeTests.h */,
-				C6CBF7381770296D00984C74 /* VWWGOLLifeTests.m */,
 				C6CBF73E177029C800984C74 /* VWWGOLLifeRule1Tests.h */,
 				C6CBF7341770296D00984C74 /* VWWGOLLifeRule1Tests.m */,
 				C6CBF73F177029C800984C74 /* VWWGOLLifeRule2Tests.h */,
@@ -284,10 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6CBF6F6177028F100984C74 /* InfoPlist.strings in Resources */,
-				C6CBF6FE177028F100984C74 /* Default.png in Resources */,
 				C6CBF700177028F100984C74 /* Default@2x.png in Resources */,
-				C6CBF702177028F100984C74 /* Default-568h@2x.png in Resources */,
 				C6CBF705177028F100984C74 /* MainStoryboard.storyboard in Resources */,
+				C6CBF7441770306200984C74 /* icon_57x57.png in Resources */,
+				C6CBF7461770306D00984C74 /* icon_114x114.png in Resources */,
+				C6EE2E1D1770F41400F33858 /* distribute.html in Resources */,
+				C6E59A821771328F00B001AE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +350,6 @@
 				C6CBF73A1770296D00984C74 /* VWWGOLLIfeRule2Tests.m in Sources */,
 				C6CBF73B1770296D00984C74 /* VWWGOLLifeRule3Tests.m in Sources */,
 				C6CBF73C1770296D00984C74 /* VWWGOLLifeRule4Tests.m in Sources */,
-				C6CBF73D1770296D00984C74 /* VWWGOLLifeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,10 +450,14 @@
 		C6CBF721177028F100984C74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLA/YAGOLA-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLA/YAGOLA-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "70A2A617-F779-40E4-BF0B-F828A738847E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "70A2A617-F779-40E4-BF0B-F828A738847E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -451,10 +465,14 @@
 		C6CBF722177028F100984C74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLA/YAGOLA-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLA/YAGOLA-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "70A2A617-F779-40E4-BF0B-F828A738847E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "70A2A617-F779-40E4-BF0B-F828A738847E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -512,6 +530,7 @@
 				C6CBF722177028F100984C74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6CBF723177028F100984C74 /* Build configuration list for PBXNativeTarget "YAGOLATests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +539,7 @@
 				C6CBF725177028F100984C74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

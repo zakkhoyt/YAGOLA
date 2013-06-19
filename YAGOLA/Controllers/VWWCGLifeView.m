@@ -73,4 +73,41 @@
 }
 
 
+
+
+
+
+
+-(void)touches:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = touchesArray[0];
+    CGPoint begin = [touch locationInView:self];
+    
+    
+    
+    CGFloat cellWidth = self.bounds.size.width / self.life.width;
+    CGFloat cellHeight = self.bounds.size.height / self.life.height;
+    
+    NSInteger x = begin.x / cellWidth;
+    NSInteger y = begin.y / cellHeight;
+    
+    [self.delegate cgLifeView:self userTouchedAtX:x andY:y];
+
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self touches:touches withEvent:event];
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self touches:touches withEvent:event];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self touches:touches withEvent:event];
+}
+
+
+
+
 @end
