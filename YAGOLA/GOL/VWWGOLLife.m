@@ -34,7 +34,8 @@
 -(id)initWithWidth:(NSInteger)width height:(NSInteger)height{
     self = [super init];
     if(self){
-        _queue = dispatch_queue_create("com.vaporwareworld.gameoflife", NULL);
+//        _queue = dispatch_queue_create("com.vaporwareworld.gameoflife", NULL);
+        _queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         _cells = [@{}mutableCopy];
         _evolvedCells = [@{}mutableCopy];
         _width = width;
@@ -423,11 +424,13 @@
         }
         
         if(self.running == NO) return;
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate renderCells];
 //            NSLog(@"");
         });
-        [self processTimer];
+        dispatch_async(self.queue, ^{
+            [self processTimer];
+        });
     });
 //    [self processTimer];
 }

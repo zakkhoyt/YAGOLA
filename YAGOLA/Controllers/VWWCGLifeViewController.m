@@ -19,8 +19,20 @@ static NSString *kSegueMainToSettings = @"segueMainToSettings";
 
 //#define WIDTH 20
 //#define HEIGHT 20
-static NSInteger kGOLWidth = 64;
-static NSInteger kGOLHeight = 92;
+
+//static NSInteger kGOLWidth = 32;
+//static NSInteger kGOLHeight = 46;
+
+//static NSInteger kGOLWidth = 64;
+//static NSInteger kGOLHeight = 92;
+
+//static NSInteger kGOLWidth = 128;
+//static NSInteger kGOLHeight = 184;
+
+static NSInteger kGOLWidth = 256;
+static NSInteger kGOLHeight = 368;
+
+
 
 //static NSInteger kGOLWidth = 200;
 //static NSInteger kGOLHeight = 200;
