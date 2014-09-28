@@ -70,6 +70,9 @@ static float kInitialFrequency = 0.1;
     return self;
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,8 +90,8 @@ static float kInitialFrequency = 0.1;
     [self.view bringSubviewToFront:self.toolbar];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     [[[UIAlertView alloc]initWithTitle:@"How to play" message:@"Tap the screen to draw the first generation of life. Tap Evolve to begin the game. The game will pause while you draw more life. Tap the action button to change drawing modes or access help." delegate:nil cancelButtonTitle:@"I got it" otherButtonTitles:nil, nil]show];
 }
@@ -97,6 +100,12 @@ static float kInitialFrequency = 0.1;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.life stop];
+    self.life = nil;
 }
 
 

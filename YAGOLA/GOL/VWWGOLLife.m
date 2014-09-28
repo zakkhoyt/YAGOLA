@@ -356,22 +356,9 @@
            [self cellPassesRule3:cell] == YES){
             [self evolveCell:cell];
         }
+        
+        
     }
-}
-
-
--(NSArray*)calculateDeadCells{  
-    NSMutableArray *deadCells = [@[]mutableCopy];
-    for(NSInteger x = 0; x < self.width; x++){
-        for(NSInteger y = 0; y < self.height; y++){
-            VWWGOLCell *cell = [self cellAtX:x andY:y];
-            if(cell == nil){
-                cell = [[VWWGOLCell alloc]initWithPositionX:x andY:y alive:NO];
-                [deadCells addObject:cell];
-            }
-        }
-    }
-    return [NSArray arrayWithArray:deadCells];
 }
 
 -(void)processDeadCells{
@@ -398,6 +385,21 @@
     }
 }
 
+-(NSArray*)calculateDeadCells{  
+    NSMutableArray *deadCells = [@[]mutableCopy];
+    for(NSInteger x = 0; x < self.width; x++){
+        for(NSInteger y = 0; y < self.height; y++){
+            VWWGOLCell *cell = [self cellAtX:x andY:y];
+            if(cell == nil){
+                cell = [[VWWGOLCell alloc]initWithPositionX:x andY:y alive:NO];
+                [deadCells addObject:cell];
+            }
+        }
+    }
+    return [NSArray arrayWithArray:deadCells];
+}
+
+
 
 -(void)processTimer{
     if(self.running == NO) return;
@@ -417,6 +419,13 @@
 //            if([self checkForStaleGeneration] == YES){
 //                // TODO:
 //            }
+            
+
+            [self.evolvedCells.allKeys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+                if(self.cells[key]){
+                    ((VWWGOLCell*)self.evolvedCells[key]).age++;
+                }
+            }];
             
             [self.cells removeAllObjects];
             self.cells = [[NSDictionary dictionaryWithDictionary:self.evolvedCells]mutableCopy];

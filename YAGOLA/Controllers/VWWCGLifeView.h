@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "VWWGridView.h"
 @class VWWGOLLife;
 @class VWWCGLifeView;
 
@@ -23,7 +23,7 @@ typedef enum {
 -(void)cgLifeViewTouchesEnded:(VWWCGLifeView*)sender;
 @end
 
-@interface VWWCGLifeView : UIView
+@interface VWWCGLifeView : VWWGridView
 @property (nonatomic, weak) id <VWWCGLifeViewDelegate> delegate;
 @property (nonatomic, strong) VWWGOLLife *life;
 @property (nonatomic) VWWCGLifeViewTouchType touchType;

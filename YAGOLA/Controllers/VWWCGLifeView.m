@@ -59,8 +59,72 @@
     
     
     for(VWWGOLCell *cell in [self.life.cells allValues]){
-        [cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
-        CGContextSetRGBFillColor(context, red, green, blue, alpha);
+        //[cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
+//        float red = 0; green = 0; blue = 0; alpha = 1.0;
+//        switch (cell.age) {
+//            case 0:
+//                red = 0.25;
+//                break;
+//            case 1:
+//                red = 0.5;
+//                break;
+//            case 2:
+//                red = 0.75;
+//                break;
+//            case 3:
+//                red = 0.25;
+//                green = 0.25;
+//                break;
+//            case 4:
+//                red = 0.25;
+//                green = 0.5;
+//                break;
+//            case 5:
+//                red = 0.25;
+//                green = 0.75;
+//                break;
+//            case 6:
+//                red = 0.5;
+//                green = 0.25;
+//                break;
+//            case 7:
+//                red = 0.5;
+//                green = 0.5;
+//                break;
+//            case 8:
+//                red = 0.5;
+//                green = 0.75;
+//                break;
+//            case 9:
+//                red = 0.75;
+//                green = 0.25;
+//                break;
+//            case 10:
+//                red = 0.75;
+//                green = 0.5;
+//                break;
+//            case 11:
+//                red = 0.75;
+//                green = 0.75;
+//                break;
+////            case 12:
+////                break;
+////            case 13:
+////                break;
+////            case 14:
+////                break;
+////            case 15:
+////                break;
+//            default:
+//                red = 1;
+//                green = 1;
+//                blue = 1;
+//                break;
+//        }
+        UIColor *color = [self colorForAge:cell.age];
+        
+        CGContextSetFillColorWithColor(context, color.CGColor);
+//        CGContextSetRGBFillColor(context, red, green, blue, alpha);
         CGFloat rectX = cellWidth * cell.x;
         CGFloat rectY = cellHeight * cell.y;
         CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
@@ -71,6 +135,22 @@
     
     
     CGContextDrawPath(context,kCGPathStroke);
+    
+}
+
+-(UIColor*)colorForAge:(NSUInteger)age{
+    float red = 0;
+    float green = 0;
+    float blue = 0;
+    float alpha = 1.0;
+    
+    float base =0.0625;
+    red = base * (age+1);
+
+    blue = base * (age+1);
+    green = 0.5 + base / 2.0 * (age+1);
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    
     
 }
 
