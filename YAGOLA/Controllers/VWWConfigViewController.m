@@ -28,6 +28,8 @@ static NSString *VWWSegueConfigToGOL = @"VWWSegueConfigToGOL";
     [self.navigationController setNavigationBarHidden:YES];
     [UIApplication sharedApplication].statusBarHidden = YES;
 
+    self.cellsSlider.maximumValue = self.view.bounds.size.width;
+    self.cellsSlider.minimumValue = 4;
     self.cellsSlider.value = 32;
     self.gridView.cellsWide = 32;
 }

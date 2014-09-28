@@ -9,132 +9,61 @@
 #import "VWWCGLifeView.h"
 #import "VWWGOLLife.h"
 
-
+@interface VWWCGLifeView ()
+@property (nonatomic, strong) NSMutableSet *usedCells;
+@end
 
 @implementation VWWCGLifeView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
+        self.usedCells = [[NSMutableSet alloc]init];
     }
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-//    NSLog(@"%s", __func__);
-    
-    //    self.backgroundColor = [UIColor clearColor];
-    
-//    NSLog(@"Self.bounds.width: %.2f", self.bounds.size.width);
-//    NSLog(@"self.life.width: %.2f", (float)self.life.width);
+- (void)drawRect:(CGRect)rect{
+    self.cellsWide = self.life.width;
+    [super drawRect:rect];
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
-    CGFloat cellHeight = self.bounds.size.height / self.life.height;
-    
-    CGFloat red, green, blue, alpha;
+    CGFloat cellHeight = cellWidth;
     CGContextRef context = UIGraphicsGetCurrentContext();
-    //    for(NSInteger x = 0; x < self.physics.width; x++){
-    //        for(NSInteger y = 0; y < self.physics.height; y++){
-    //            VWWGOLCell *cell = [self.physics cellAtIndex:y + self.physics.width * x];
-    //            if(cell){
-    //                [cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
-    //                CGContextSetRGBFillColor(context, red, green, blue, alpha);
-    //            }
-    //            else{
-    //                CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-    //            }
-    //
-    //            CGFloat rectX = cellWidth * x;
-    //            CGFloat rectY = cellHeight * y;
-    //
-    //            CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
-    ////            CGContextFillEllipseInRect(context, cellRect);
-    //            CGContextFillRect(context, cellRect);
-    //        }
-    //    }
-    
-    
-    for(VWWGOLCell *cell in [self.life.cells allValues]){
-        //[cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
-//        float red = 0; green = 0; blue = 0; alpha = 1.0;
-//        switch (cell.age) {
-//            case 0:
-//                red = 0.25;
-//                break;
-//            case 1:
-//                red = 0.5;
-//                break;
-//            case 2:
-//                red = 0.75;
-//                break;
-//            case 3:
-//                red = 0.25;
-//                green = 0.25;
-//                break;
-//            case 4:
-//                red = 0.25;
-//                green = 0.5;
-//                break;
-//            case 5:
-//                red = 0.25;
-//                green = 0.75;
-//                break;
-//            case 6:
-//                red = 0.5;
-//                green = 0.25;
-//                break;
-//            case 7:
-//                red = 0.5;
-//                green = 0.5;
-//                break;
-//            case 8:
-//                red = 0.5;
-//                green = 0.75;
-//                break;
-//            case 9:
-//                red = 0.75;
-//                green = 0.25;
-//                break;
-//            case 10:
-//                red = 0.75;
-//                green = 0.5;
-//                break;
-//            case 11:
-//                red = 0.75;
-//                green = 0.75;
-//                break;
-////            case 12:
-////                break;
-////            case 13:
-////                break;
-////            case 14:
-////                break;
-////            case 15:
-////                break;
-//            default:
-//                red = 1;
-//                green = 1;
-//                blue = 1;
-//                break;
-//        }
-        UIColor *color = [self colorForAge:cell.age];
+
+    @try {
+        for(VWWGOLCell *cell in self.usedCells){
+            UIColor *color = [UIColor darkGrayColor];
+            CGContextSetFillColorWithColor(context, color.CGColor);
+            CGFloat rectX = cellWidth * cell.x;
+            CGFloat rectY = cellHeight * cell.y;
+            CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
+            CGContextFillRect(context, cellRect);
+        }
         
-        CGContextSetFillColorWithColor(context, color.CGColor);
-//        CGContextSetRGBFillColor(context, red, green, blue, alpha);
-        CGFloat rectX = cellWidth * cell.x;
-        CGFloat rectY = cellHeight * cell.y;
-        CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
-        CGContextFillRect(context, cellRect);
+        
+        
+        for(VWWGOLCell *cell in [self.life.cells allValues]){
+            UIColor *color = [self colorForAge:cell.age];
+            CGContextSetFillColorWithColor(context, color.CGColor);
+            CGFloat rectX = cellWidth * cell.x;
+            CGFloat rectY = cellHeight * cell.y;
+            CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
+            CGContextFillRect(context, cellRect);
+            [self.usedCells addObject:cell];
+            
+        }
+        CGContextDrawPath(context,kCGPathStroke);
+    }
+    @catch (NSException *exception) {
+
+    }
+    @finally {
+
     }
     
     
     
-    
-    CGContextDrawPath(context,kCGPathStroke);
     
 }
 
@@ -166,10 +95,9 @@
     
     
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
-    CGFloat cellHeight = self.bounds.size.height / self.life.height;
     
     NSInteger x = begin.x / cellWidth;
-    NSInteger y = begin.y / cellHeight;
+    NSInteger y = begin.y / cellWidth;
     
     // 00X
     // X0X
@@ -190,10 +118,9 @@
     
     
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
-    CGFloat cellHeight = self.bounds.size.height / self.life.height;
     
     NSInteger x = begin.x / cellWidth;
-    NSInteger y = begin.y / cellHeight;
+    NSInteger y = begin.y / cellWidth;
     
     // 0XXXX
     // X000X
@@ -222,10 +149,9 @@
     
     
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
-    CGFloat cellHeight = self.bounds.size.height / self.life.height;
     
     NSInteger x = begin.x / cellWidth;
-    NSInteger y = begin.y / cellHeight;
+    NSInteger y = begin.y / cellWidth;
     
     [self.delegate cgLifeView:self userTouchedAtX:x andY:y];
 

@@ -14,7 +14,7 @@
 
 
 -(void)drawSolidLineUsingContext:(CGContextRef)context fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint color:(UIColor*)color{
-    CGContextSetLineWidth(context, 1.0f);
+    CGContextSetLineWidth(context, 0.5f);
     CGContextMoveToPoint(context, fromPoint.x, fromPoint.y);
     CGContextAddLineToPoint(context, toPoint.x, toPoint.y);
     CGContextStrokePath(context);
@@ -27,30 +27,23 @@
     
     CGContextBeginPath(cgContext);
     
-    UIColor *color = [UIColor greenColor];
+    UIColor *color = [UIColor colorWithRed:0 green:0.5 blue:0 alpha:1.0];
     CGContextSetStrokeColorWithColor(cgContext , color.CGColor);
     
-    CGFloat width = self.bounds.size.width / (float)self.cellsWide;
+    CGFloat width = self.bounds.size.width / (float)self.cellsWide ;
 
-    
-    
     for(NSUInteger y = 0; y < self.cellsWide; y++){
         CGPoint beginPoint = CGPointMake(y*width, 0);
         CGPoint endPoint = CGPointMake(y*width, self.bounds.size.height);
         [self drawSolidLineUsingContext:cgContext fromPoint:beginPoint toPoint:endPoint color:color];
     }
     
-    
     NSUInteger cellsHigh = self.bounds.size.height / self.bounds.size.width * self.cellsWide;
     for(NSUInteger x = 0; x < cellsHigh; x++){
         CGPoint beginPoint = CGPointMake(0, x*width);
         CGPoint endPoint = CGPointMake(self.bounds.size.width, x*width);
         [self drawSolidLineUsingContext:cgContext fromPoint:beginPoint toPoint:endPoint color:color];
-        
     }
-    
-    
-    
 }
 
 

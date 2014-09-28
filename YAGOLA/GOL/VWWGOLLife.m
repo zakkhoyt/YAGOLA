@@ -5,6 +5,7 @@
 //  Created by Zakk Hoyt on 6/16/13.
 //  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
 //
+// See a java implementation here: http://en.wikibooks.org/wiki/Algorithm_Implementation/Simulation/Conway%27s_Game_of_Life
 
 #import "VWWGOLLife.h"
 
@@ -287,57 +288,57 @@
 
 
 
-//Any live cell with fewer than two live neighbours dies, as if caused by under-population.
--(BOOL)cellPassesRule1:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
-    if(neighborCells.count < 2){
-#if defined(VWW_VERBOSE_LOGGING)
-        NSLog(@"%@ died from rule 1. %d (<2)", cell, neighborCells.count);
-#endif
-        return NO;
-    }
-    
-    return YES;
-}
-
-//Any live cell with two or three live neighbours lives on to the next generation.
--(BOOL)cellPassesRule2:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
-    if(neighborCells.count == 2 || neighborCells.count == 3){
-        return YES;
-    }
-    
-#if defined(VWW_VERBOSE_LOGGING)
-    NSLog(@"%@ died from rule 2. %d (!=2 !=3)", cell, neighborCells.count);
-#endif
-    return NO;
-}
-
-//Any live cell with more than three live neighbours dies, as if by overcrowding.
--(BOOL)cellPassesRule3:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
-    if(neighborCells.count > 3){
-#if defined(VWW_VERBOSE_LOGGING)
-        NSLog(@"%@ died from rule 3. %d (>3)", cell, neighborCells.count);
-#endif
-        
-        return NO;
-    }
-    return YES;
-}
-
-//Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
--(BOOL)cellPassesRule4:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
-    if(neighborCells.count == 3){
-#if defined(VWW_VERBOSE_LOGGING)
-        NSLog(@"%@ birthed from rule 4. %d (==3)", cell, neighborCells.count);
-#endif
-        
-        return YES;
-    }
-    return NO;
-}
+////Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+//-(BOOL)cellPassesRule1:(VWWGOLCell*)cell{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+//    if(neighborCells.count < 2){
+//#if defined(VWW_VERBOSE_LOGGING)
+//        NSLog(@"%@ died from rule 1. %d (<2)", cell, neighborCells.count);
+//#endif
+//        return NO;
+//    }
+//    
+//    return YES;
+//}
+//
+////Any live cell with two or three live neighbours lives on to the next generation.
+//-(BOOL)cellPassesRule2:(VWWGOLCell*)cell{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+//    if(neighborCells.count == 2 || neighborCells.count == 3){
+//        return YES;
+//    }
+//    
+//#if defined(VWW_VERBOSE_LOGGING)
+//    NSLog(@"%@ died from rule 2. %d (!=2 !=3)", cell, neighborCells.count);
+//#endif
+//    return NO;
+//}
+//
+////Any live cell with more than three live neighbours dies, as if by overcrowding.
+//-(BOOL)cellPassesRule3:(VWWGOLCell*)cell{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+//    if(neighborCells.count > 3){
+//#if defined(VWW_VERBOSE_LOGGING)
+//        NSLog(@"%@ died from rule 3. %d (>3)", cell, neighborCells.count);
+//#endif
+//        
+//        return NO;
+//    }
+//    return YES;
+//}
+//
+////Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+//-(BOOL)cellPassesRule4:(VWWGOLCell*)cell{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+//    if(neighborCells.count == 3){
+//#if defined(VWW_VERBOSE_LOGGING)
+//        NSLog(@"%@ birthed from rule 4. %d (==3)", cell, neighborCells.count);
+//#endif
+//        
+//        return YES;
+//    }
+//    return NO;
+//}
 
 
 -(void)evolveCell:(VWWGOLCell*)cell{
@@ -351,22 +352,16 @@
     for(VWWGOLCell *cell in self.cells.allValues){
         //VWWGOLCell *cell = self.cells[index];
         
-        if([self cellPassesRule1:cell] == YES &&
-           [self cellPassesRule2:cell] == YES &&
-           [self cellPassesRule3:cell] == YES){
+        
+        NSArray *livingNeighborCells = [self getLivingNeighborCellsFromCell:cell];
+        if(livingNeighborCells.count == 2 ||
+           livingNeighborCells.count == 3){
             [self evolveCell:cell];
         }
         
         
-    }
-}
-
--(void)processDeadCells{
-    [self.examinedDeadCells removeAllObjects];
-    
-    // For each live cell
-    for(VWWGOLCell *cell in [self.cells allValues]){
         // Get Dead neighbors
+        [self.examinedDeadCells removeAllObjects];
         NSDictionary *deadNeighbors = [self getDeadNeighborCellsFromCell:cell];
         // for each dn in dns
         for(VWWGOLCell *deadNeighbor in [deadNeighbors allValues]){
@@ -380,10 +375,32 @@
                     [self evolveCell:deadNeighbor];
                 }
             }
-            
         }
     }
 }
+
+//-(void)processDeadCells{
+//    [self.examinedDeadCells removeAllObjects];
+//    
+//    // For each live cell
+//    for(VWWGOLCell *cell in [self.cells allValues]){
+//        // Get Dead neighbors
+//        NSDictionary *deadNeighbors = [self getDeadNeighborCellsFromCell:cell];
+//        // for each dn in dns
+//        for(VWWGOLCell *deadNeighbor in [deadNeighbors allValues]){
+//            if([self.examinedDeadCells objectForKey:deadNeighbor.key] == nil){
+//                [self.examinedDeadCells setObject:deadNeighbor forKey:deadNeighbor.key];
+//                // get live neighbors
+//                NSArray *liveNeighbors = [self getLivingNeighborCellsFromCell:deadNeighbor];
+//                // if ln.count == 3
+//                if(liveNeighbors.count == 3){
+//                    // spring to life
+//                    [self evolveCell:deadNeighbor];
+//                }
+//            }
+//        }
+//    }
+//}
 
 -(NSArray*)calculateDeadCells{  
     NSMutableArray *deadCells = [@[]mutableCopy];
@@ -408,11 +425,11 @@
         @autoreleasepool {
     
 //#if defined(VWW_VERBOSE_LOGGING)
-            NSLog(@"---------- Evolving a generation");
+//            NSLog(@"---------- Evolving a generation");
 //#endif
             [self.evolvedCells removeAllObjects];
             [self processLivingCells];
-            [self processDeadCells];
+//            [self processDeadCells];
 //
 //            [self printCells];
 //            

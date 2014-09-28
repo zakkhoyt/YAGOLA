@@ -78,6 +78,10 @@ static float kInitialFrequency = 0.1;
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    
+    
+    
     self.cgLifeView.delegate = self;
     NSInteger cellsHigh = self.cellsWide * self.view.bounds.size.height / self.view.bounds.size.width;
     self.life = [[VWWGOLLife alloc]initWithWidth:self.cellsWide height:cellsHigh];
@@ -93,7 +97,7 @@ static float kInitialFrequency = 0.1;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [[[UIAlertView alloc]initWithTitle:@"How to play" message:@"Tap the screen to draw the first generation of life. Tap Evolve to begin the game. The game will pause while you draw more life. Tap the action button to change drawing modes or access help." delegate:nil cancelButtonTitle:@"I got it" otherButtonTitles:nil, nil]show];
+    [[[UIAlertView alloc]initWithTitle:@"How to play" message:@"Tap the screen to draw the first generation of life. Tap Evolve to begin the game. The game will pause while you draw more life. Tap the action button to change drawing modes." delegate:nil cancelButtonTitle:@"I got it" otherButtonTitles:nil, nil]show];
 }
 
 - (void)didReceiveMemoryWarning
@@ -137,7 +141,6 @@ static float kInitialFrequency = 0.1;
                                   @"Single Cells",
                                   @"Kill all cells",
                                   @"Random seed",
-                                  @"Help",
                                   nil];
     [actionSheet showInView:self.view];
 }
@@ -175,6 +178,7 @@ static float kInitialFrequency = 0.1;
 
 - (IBAction)clearButtonTouchUnInside:(id)sender {
     [self.life stop];
+    [self.startButton  setTitle:@"Evolve!"];
     [self.life killAllCells];
     [self renderCells];
 }
@@ -240,8 +244,6 @@ static float kInitialFrequency = 0.1;
         self.cgLifeView.touchType = VWWCGLifeViewTouchTypeNormal;
     } else if(buttonIndex == 3){
         [self clearButtonTouchUnInside:nil];
-        [self.life killAllCells];
-        [self renderCells];
     } else if(buttonIndex == 4){
         [self generateButtonTouchUpInside:nil];
     } else if(buttonIndex == 5){

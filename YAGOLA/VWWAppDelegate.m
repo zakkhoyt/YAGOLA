@@ -13,7 +13,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:18];
+    
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor greenColor],
+                                 NSFontAttributeName : font};
+
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
+
+    UIColor *color = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0];
+    [[UINavigationBar appearance] setBarTintColor:color];
+    [[UIToolbar appearance] setBarTintColor:color];
+
+    [[UIToolbar appearance] setTranslucent:YES];
     return YES;
 }
 							

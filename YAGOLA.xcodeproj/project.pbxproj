@@ -33,6 +33,7 @@
 		C6EE2E1D1770F41400F33858 /* distribute.html in Resources */ = {isa = PBXBuildFile; fileRef = C6EE2E1C1770F41400F33858 /* distribute.html */; };
 		CF170AA819D6856C00221981 /* VWWConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF170AA719D6856C00221981 /* VWWConfigViewController.m */; };
 		CF7373CA19D79CD30097C6D3 /* VWWGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7373C919D79CD30097C6D3 /* VWWGridView.m */; };
+		CF83480719D7C9ED0030029C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF83480619D7C9ED0030029C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		CF170AA719D6856C00221981 /* VWWConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigViewController.m; sourceTree = "<group>"; };
 		CF7373C819D79CD30097C6D3 /* VWWGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGridView.h; sourceTree = "<group>"; };
 		CF7373C919D79CD30097C6D3 /* VWWGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGridView.m; sourceTree = "<group>"; };
+		CF83480619D7C9ED0030029C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				C6CBF6FA177028F100984C74 /* VWWAppDelegate.h */,
 				C6CBF6FB177028F100984C74 /* VWWAppDelegate.m */,
 				C6CBF703177028F100984C74 /* MainStoryboard.storyboard */,
+				CF83480619D7C9ED0030029C /* Images.xcassets */,
 				C6CBF6F2177028F100984C74 /* Supporting Files */,
 			);
 			path = YAGOLA;
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6CBF6F6177028F100984C74 /* InfoPlist.strings in Resources */,
+				CF83480719D7C9ED0030029C /* Images.xcassets in Resources */,
 				C6CBF700177028F100984C74 /* Default@2x.png in Resources */,
 				C6CBF705177028F100984C74 /* MainStoryboard.storyboard in Resources */,
 				C6CBF7441770306200984C74 /* icon_57x57.png in Resources */,
@@ -467,6 +471,8 @@
 		C6CBF721177028F100984C74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -482,6 +488,8 @@
 		C6CBF722177028F100984C74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
