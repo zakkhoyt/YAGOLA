@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface VWWCGLifeViewController : UIViewController
-
+@property (nonatomic) NSUInteger cellsWide;
 @end

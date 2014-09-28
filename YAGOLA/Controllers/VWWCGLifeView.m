@@ -30,6 +30,8 @@
     
     //    self.backgroundColor = [UIColor clearColor];
     
+//    NSLog(@"Self.bounds.width: %.2f", self.bounds.size.width);
+//    NSLog(@"self.life.width: %.2f", (float)self.life.width);
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
     CGFloat cellHeight = self.bounds.size.height / self.life.height;
     
@@ -76,8 +78,62 @@
 
 
 
+-(void)touchesGlider:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = touchesArray[0];
+    CGPoint begin = [touch locationInView:self];
+    
+    
+    
+    CGFloat cellWidth = self.bounds.size.width / self.life.width;
+    CGFloat cellHeight = self.bounds.size.height / self.life.height;
+    
+    NSInteger x = begin.x / cellWidth;
+    NSInteger y = begin.y / cellHeight;
+    
+    // 00X
+    // X0X
+    // 0XX
+    [self.delegate cgLifeView:self userTouchedAtX:x andY:y];
+    [self.delegate cgLifeView:self userTouchedAtX:x+1 andY:y+1];
+    [self.delegate cgLifeView:self userTouchedAtX:x+2 andY:y+1];
+    [self.delegate cgLifeView:self userTouchedAtX:x+2 andY:y];
+    [self.delegate cgLifeView:self userTouchedAtX:x+2 andY:y-1];
 
+}
 
+-(void)touchesSpaceship:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = touchesArray[0];
+    CGPoint begin = [touch locationInView:self];
+    
+    
+    
+    CGFloat cellWidth = self.bounds.size.width / self.life.width;
+    CGFloat cellHeight = self.bounds.size.height / self.life.height;
+    
+    NSInteger x = begin.x / cellWidth;
+    NSInteger y = begin.y / cellHeight;
+    
+    // 0XXXX
+    // X000X
+    // 0000X
+    // X00X0
+    
+    [self.delegate cgLifeView:self userTouchedAtX:x andY:y];
+    [self.delegate cgLifeView:self userTouchedAtX:x+3 andY:y];
+    [self.delegate cgLifeView:self userTouchedAtX:x+4 andY:y-1];
+    [self.delegate cgLifeView:self userTouchedAtX:x+4 andY:y-2];
+    [self.delegate cgLifeView:self userTouchedAtX:x+4 andY:y-3];
+    [self.delegate cgLifeView:self userTouchedAtX:x+3 andY:y-3];
+    [self.delegate cgLifeView:self userTouchedAtX:x+2 andY:y-3];
+    [self.delegate cgLifeView:self userTouchedAtX:x+1 andY:y-3];
+    [self.delegate cgLifeView:self userTouchedAtX:x andY:y-2];
+}
+
+-(void)setLife:(VWWGOLLife *)life{
+    _life = life;
+}
 -(void)touches:(NSSet *)touches withEvent:(UIEvent *)event{
     NSArray *touchesArray = [touches allObjects];
     UITouch* touch = touchesArray[0];
@@ -96,15 +152,30 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self touches:touches withEvent:event];
+    [self.delegate cgLifeViewTouchesBegan:self];
+    
+    if(self.touchType == VWWCGLifeViewTouchTypeNormal){
+        [self touches:touches withEvent:event];
+    } else if(self.touchType == VWWCGLifeViewTouchTypeGlider){
+        [self touchesGlider:touches withEvent:event];
+    } else if(self.touchType == VWWCGLifeViewTouchTypeSpaceship){
+        [self touchesSpaceship:touches withEvent:event];
+    }
+    
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self touches:touches withEvent:event];
+    if(self.touchType == VWWCGLifeViewTouchTypeNormal){
+        [self touches:touches withEvent:event];
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self touches:touches withEvent:event];
+    if(self.touchType == VWWCGLifeViewTouchTypeNormal){
+        [self touches:touches withEvent:event];
+    }
+
+    [self.delegate cgLifeViewTouchesEnded:self];
 }
 
 

@@ -31,6 +31,8 @@
 		C6CBF7461770306D00984C74 /* icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF7451770306D00984C74 /* icon_114x114.png */; };
 		C6E59A821771328F00B001AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6CBF74B177030CC00984C74 /* Default-568h@2x.png */; };
 		C6EE2E1D1770F41400F33858 /* distribute.html in Resources */ = {isa = PBXBuildFile; fileRef = C6EE2E1C1770F41400F33858 /* distribute.html */; };
+		CF170AA819D6856C00221981 /* VWWConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF170AA719D6856C00221981 /* VWWConfigViewController.m */; };
+		CF7373CA19D79CD30097C6D3 /* VWWGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7373C919D79CD30097C6D3 /* VWWGridView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		C6CBF749177030C500984C74 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C6CBF74B177030CC00984C74 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C6EE2E1C1770F41400F33858 /* distribute.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = distribute.html; sourceTree = "<group>"; };
+		CF170AA619D6856C00221981 /* VWWConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigViewController.h; sourceTree = "<group>"; };
+		CF170AA719D6856C00221981 /* VWWConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigViewController.m; sourceTree = "<group>"; };
+		CF7373C819D79CD30097C6D3 /* VWWGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGridView.h; sourceTree = "<group>"; };
+		CF7373C919D79CD30097C6D3 /* VWWGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGridView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,8 +209,12 @@
 			children = (
 				C6CBF7271770294B00984C74 /* VWWCGLifeView.h */,
 				C6CBF7281770294B00984C74 /* VWWCGLifeView.m */,
+				CF7373C819D79CD30097C6D3 /* VWWGridView.h */,
+				CF7373C919D79CD30097C6D3 /* VWWGridView.m */,
 				C6CBF7291770294B00984C74 /* VWWCGLifeViewController.h */,
 				C6CBF72A1770294B00984C74 /* VWWCGLifeViewController.m */,
+				CF170AA619D6856C00221981 /* VWWConfigViewController.h */,
+				CF170AA719D6856C00221981 /* VWWConfigViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +352,8 @@
 				C6CBF6FC177028F100984C74 /* VWWAppDelegate.m in Sources */,
 				C6CBF7301770294B00984C74 /* VWWCGLifeView.m in Sources */,
 				C6CBF7311770294B00984C74 /* VWWCGLifeViewController.m in Sources */,
+				CF170AA819D6856C00221981 /* VWWConfigViewController.m in Sources */,
+				CF7373CA19D79CD30097C6D3 /* VWWGridView.m in Sources */,
 				C6CBF7321770294B00984C74 /* VWWGOLCell.m in Sources */,
 				C6CBF7331770294B00984C74 /* VWWGOLLife.m in Sources */,
 			);
